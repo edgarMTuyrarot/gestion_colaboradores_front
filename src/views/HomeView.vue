@@ -12,4 +12,5 @@ const user = ref(userStore.user)
 <template>
   <navbar></navbar>
   <h2 class="title text-primary text-center">Hola! {{ user.nombre }}</h2>
+  <h2 class="text-primary text-center">Rol: {{ user.rol }}</h2>
 </template>

@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import {RouterLink} from 'vue-router'
 import {useUserStore} from '../stores/userStore.js'
+import Toast from '../components/ToastErrores.vue'
 
 
 const formData = ref({
@@ -32,6 +33,11 @@ const submitForm = async () => {
         name="password"
         placeholder="Contraseña"
       />
+      <toast
+        v-if="store.loginErrors"
+        class="m-1"
+        :errors="store.loginErrors"
+      ></toast>
       <button type="submit" class="btn btn-sm btn-outline-success m-1">
         Iniciar Sesion
       </button>
